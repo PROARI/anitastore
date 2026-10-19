@@ -38,10 +38,18 @@ function handleAdminLogin(event) {
   const errorMsg = document.getElementById("loginErrorMsg");
 
   const settings = getStoreData().settings;
-  const validUser = settings.adminUser || "admin";
-  const validPass = settings.adminPass || "anita123";
+  const validUser = (settings.adminUser || "adminanita").trim().toLowerCase();
+  const validPass = (settings.adminPass || "anita 2026").trim();
 
-  if (user === validUser && pass === validPass) {
+  // Accept user adminanita and password anita 2026 (or anita2026 without space)
+  const isUserValid = user.toLowerCase() === validUser || user.toLowerCase() === "adminanita";
+  const isPassValid = pass === validPass || pass === "anita 2026" || pass === "anita2026" || pass.replace(/\s+/g, '') === "anita2026";
+
+  if (isUserValid && isPassValid) {
+    settings.adminUser = "adminanita";
+    settings.adminPass = "anita 2026";
+    saveStoreData("settings", settings);
+
     adminSessionActive = true;
     closeAdminLoginModal();
     openAdminDashboard();
@@ -322,6 +330,21 @@ function renderAdminProductRows(products) {
   tbody.innerHTML = html;
 }
 
+let currentUploadedProductImage = "";
+
+function selectPresetProductImage(filename) {
+  currentUploadedProductImage = "";
+  const imageField = document.getElementById("prodEditImage");
+  const previewBox = document.getElementById("prodEditPreviewBox");
+  const previewImg = document.getElementById("prodEditPreviewImg");
+  const fileInput = document.getElementById("prodEditFileInput");
+
+  if (fileInput) fileInput.value = "";
+  if (imageField) imageField.value = filename;
+  if (previewImg) previewImg.src = filename;
+  if (previewBox) previewBox.style.display = "block";
+}
+
 function openProductFormModal(productId = null) {
   const modal = document.getElementById("productFormModal");
   const title = document.getElementById("productFormModalTitle");
@@ -345,10 +368,26 @@ function openProductFormModal(productId = null) {
   const descField = document.getElementById("prodEditDescription");
   const previewBox = document.getElementById("prodEditPreviewBox");
   const previewImg = document.getElementById("prodEditPreviewImg");
+  const fileInput = document.getElementById("prodEditFileInput");
 
   const chkOferta = document.getElementById("prodEditBadgeOferta");
   const chkNovedad = document.getElementById("prodEditBadgeNovedad");
   const chkDestacado = document.getElementById("prodEditBadgeDestacado");
+
+  // Reset file input and uploaded image state
+  if (fileInput) fileInput.value = "";
+  currentUploadedProductImage = "";
+
+  // Set live preview on typing
+  if (imageField) {
+    imageField.oninput = function() {
+      currentUploadedProductImage = "";
+      if (this.value.trim() !== "") {
+        if (previewImg) previewImg.src = this.value.trim();
+        if (previewBox) previewBox.style.display = "block";
+      }
+    };
+  }
 
   if (productId) {
     const prod = data.products.find(p => p.id === productId);
@@ -364,7 +403,6 @@ function openProductFormModal(productId = null) {
     if (imageField) imageField.value = prod.image;
     if (descField) descField.value = prod.description || "";
 
-    currentEditingProductImage = prod.image;
     if (previewBox && previewImg) {
       previewImg.src = prod.image;
       previewBox.style.display = "block";
@@ -380,12 +418,11 @@ function openProductFormModal(productId = null) {
     if (priceField) priceField.value = "";
     if (oldPriceField) oldPriceField.value = "";
     if (stockField) stockField.value = "10";
-    if (imageField) imageField.value = "logo importaciones Anita.jpeg";
+    if (imageField) imageField.value = "juguetes.jpeg";
     if (descField) descField.value = "";
 
-    currentEditingProductImage = "logo importaciones Anita.jpeg";
     if (previewBox && previewImg) {
-      previewImg.src = "logo importaciones Anita.jpeg";
+      previewImg.src = "juguetes.jpeg";
       previewBox.style.display = "block";
     }
 
@@ -395,6 +432,7 @@ function openProductFormModal(productId = null) {
   }
 
   if (modal) modal.classList.add("active");
+  if (nameField) setTimeout(() => nameField.focus(), 100);
 }
 
 function closeProductFormModal() {
@@ -408,7 +446,7 @@ function handleProductImageFile(input) {
 
   const reader = new FileReader();
   reader.onload = (e) => {
-    currentEditingProductImage = e.target.result;
+    currentUploadedProductImage = e.target.result;
     const imageField = document.getElementById("prodEditImage");
     const previewBox = document.getElementById("prodEditPreviewBox");
     const previewImg = document.getElementById("prodEditPreviewImg");
@@ -433,13 +471,18 @@ function handleSaveProduct(event) {
   const imageInputVal = document.getElementById("prodEditImage").value.trim();
   const description = document.getElementById("prodEditDescription").value.trim();
 
+  if (!name || isNaN(price)) {
+    alert("Por favor ingresa un nombre y precio válido para el producto.");
+    return;
+  }
+
   const badges = [];
   if (document.getElementById("prodEditBadgeOferta").checked) badges.push("oferta");
   if (document.getElementById("prodEditBadgeNovedad").checked) badges.push("novedad");
   if (document.getElementById("prodEditBadgeDestacado").checked) badges.push("destacado");
 
-  // Determine final image string (either DataURL uploaded or text string)
-  const image = currentEditingProductImage || imageInputVal || "logo importaciones Anita.jpeg";
+  // Determine final image string (either uploaded DataURL, preset or text string)
+  const image = currentUploadedProductImage || imageInputVal || "logo importaciones Anita.jpeg";
 
   const data = getStoreData();
 
@@ -460,7 +503,7 @@ function handleSaveProduct(event) {
       };
     }
   } else {
-    // Create new
+    // Create new product
     const newProduct = {
       id: `prod-${Date.now()}`,
       name,
@@ -477,12 +520,17 @@ function handleSaveProduct(event) {
     data.products.unshift(newProduct);
   }
 
+  // Persist to localStorage
   saveStoreData("products", data.products);
+
+  // Close modal and refresh all views immediately
   closeProductFormModal();
   refreshAdminProductsTable();
   refreshAdminMetrics();
   renderProductsCatalog();
-  alert("¡Producto guardado exitosamente!");
+  renderSidebarCategories();
+
+  alert(`¡Producto "${name}" guardado exitosamente en IMPORTACIONES ANITA!`);
 }
 
 function handleDeleteProduct(productId) {

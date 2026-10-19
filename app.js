@@ -14,8 +14,8 @@ const DEFAULT_SETTINGS = {
   phone: "67664328",
   currency: "Bs",
   freeShippingThreshold: 120,
-  adminUser: "admin",
-  adminPass: "anita123",
+  adminUser: "adminanita",
+  adminPass: "anita 2026",
   bankInfo: "Titular: IMPORTACIONES ANITA\nBancos Aceptados: Banco Unión, BNB, BCP, Banco Sol, FIE, Tigo Money\nCobija - Pando, Bolivia",
   qrImage: "" // Empty uses default generated SVG QR
 };
@@ -326,8 +326,16 @@ function getStoreData() {
   let orders = localStorage.getItem("anita_orders");
   let cart = localStorage.getItem("anita_cart");
 
+  let parsedSettings = settings ? JSON.parse(settings) : { ...DEFAULT_SETTINGS };
+  if (!parsedSettings.adminUser || parsedSettings.adminUser === "admin") {
+    parsedSettings.adminUser = "adminanita";
+  }
+  if (!parsedSettings.adminPass || parsedSettings.adminPass === "anita123") {
+    parsedSettings.adminPass = "anita 2026";
+  }
+
   return {
-    settings: settings ? JSON.parse(settings) : DEFAULT_SETTINGS,
+    settings: parsedSettings,
     categories: categories ? JSON.parse(categories) : DEFAULT_CATEGORIES,
     products: products ? JSON.parse(products) : DEFAULT_PRODUCTS,
     flyers: flyers ? JSON.parse(flyers) : DEFAULT_FLYERS,

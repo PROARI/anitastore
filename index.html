@@ -672,7 +672,7 @@
         </div>
 
         <div class="admin-login-hint">
-          <small><i class="fa-solid fa-key"></i> Acceso por defecto: Usuario: <strong>admin</strong> | Clave: <strong>anita123</strong></small>
+          <small><i class="fa-solid fa-key"></i> Acceso Administrador: Usuario: <strong>adminanita</strong> | Clave: <strong>anita 2026</strong></small>
         </div>
 
         <div class="login-error-msg" id="loginErrorMsg" style="display: none;">
@@ -1109,7 +1109,20 @@ Cobija - Pando, Bolivia</textarea>
                 <input type="file" id="prodEditFileInput" accept="image/*" style="display: none;" onchange="handleProductImageFile(this)">
               </label>
             </div>
-            <div class="image-preview-box" id="prodEditPreviewBox" style="display: none;">
+            <div class="quick-image-pills" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
+              <small style="width:100%; color:#64748b; font-weight:600;">O selecciona una foto de la tienda:</small>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('juguetes.jpeg')">🧸 Juguetes</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('OSOSO.jpeg')">🐻 Peluches</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('MAQUILLAJES.jpeg')">💄 Maquillajes</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('PIANOS.jpeg')">🎹 Pianos</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('MATERIALES ESCOLARES.jpeg')">📚 Escolar</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('MOCHILAS.jpeg')">🎒 Mochilas</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('ROPA INFANTIL.jpeg')">👕 Ropa</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('HOJAS PARA SUBLIMACIONES.jpeg')">🖨️ Sublimación</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('RELOJES.jpeg')">⌚ Relojes</button>
+              <button type="button" class="btn btn-sm btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="selectPresetProductImage('logo importaciones Anita.jpeg')">✨ Logo Anita</button>
+            </div>
+            <div class="image-preview-box" id="prodEditPreviewBox" style="display: none; margin-top: 10px;">
               <img id="prodEditPreviewImg" src="" alt="Vista previa">
             </div>
           </div>
