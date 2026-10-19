@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPORTACIONES ANITA | Tienda Online Cobija, Pando</title>
+  <meta name="description" content="IMPORTACIONES ANITA en Cobija, Pando. Venta de juguetes, peluches, maquillajes, pianos y teclados musicales, material escolar y oficina, ropa infantil y regalos. Envíos y pagos por QR.">
+  <meta name="keywords" content="Importaciones Anita, Cobija, Pando, Bolivia, juguetes, peluches, maquillaje, pianos, teclados, material escolar, ropa infantil, regalos">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo importaciones Anita.jpeg">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for clean UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="top-announcement-bar" id="topAnnouncement">
+    <div class="container announcement-content">
+      <div class="announcement-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span id="headerAddress">Diagonal a la plaza principal, Cobija, Pando, Bolivia</span>
+      </div>
+      <div class="announcement-item highlight">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>¡Envíos rápidos en Cobija y pagos 100% seguros con QR!</span>
+      </div>
+      <div class="announcement-actions">
+        <a href="https://wa.me/59167664328" target="_blank" class="announcement-link" id="headerPhoneLink">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp: <strong id="headerPhone">67664328</strong>
+        </a>
+        <button class="admin-access-btn" id="openAdminLoginBtn" title="Acceso al Panel de Administración">
+          <i class="fa-solid fa-lock"></i>
+          <span>Admin</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER ================= -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      
+      <!-- Brand Logo & Name -->
+      <a href="index.html" class="brand-logo-wrapper" title="IMPORTACIONES ANITA">
+        <img src="logo importaciones Anita.jpeg" alt="Logotipo IMPORTACIONES ANITA" class="brand-logo-img" id="mainBrandLogo">
+        <div class="brand-text">
+          <h1 class="brand-title">IMPORTACIONES ANITA</h1>
+          <span class="brand-tagline">Cobija, Pando • Bolivia</span>
+        </div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-bar-wrapper">
+        <div class="search-input-group">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Buscar juguetes, pianos, maquillajes, peluches..." autocomplete="off">
+          <button class="clear-search-btn" id="clearSearchBtn" title="Limpiar búsqueda" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="search-autocomplete-dropdown" id="searchAutocomplete"></div>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Direct WhatsApp Contact Pill -->
+        <a href="https://wa.me/59167664328?text=Hola%20IMPORTACIONES%20ANITA,%20deseo%20hacer%20una%20consulta" target="_blank" class="header-whatsapp-pill" title="Escribir por WhatsApp">
+          <div class="wa-icon-circle">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="wa-pill-text">
+            <span class="wa-label">Consultas y Pedidos</span>
+            <span class="wa-number">67664328</span>
+          </div>
+        </a>
+
+        <!-- Cart Button -->
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Ver Carrito de Compras">
+          <div class="cart-icon-container">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge-count" id="cartBadgeCount">0</span>
+          </div>
+          <div class="cart-btn-info">
+            <span class="cart-label">Carrito</span>
+            <span class="cart-total-preview" id="cartTotalPreview">0.00 Bs</span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= CATEGORY QUICK NAV BAR ================= -->
+  <nav class="category-navbar" id="categoryNavbar">
+    <div class="container category-nav-container">
+      <ul class="category-nav-list" id="categoryNavList">
+        <!-- Categories generated dynamically via app.js -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT HERO & SIDEBAR ================= -->
+  <main class="main-content-layout">
+    <div class="container main-grid-container">
+      
+      <!-- HERO & CATALOG AREA (Left/Main Column) -->
+      <section class="catalog-main-column">
+
+        <!-- HERO BANNER PROMOTION -->
+        <div class="hero-promo-banner">
+          <div class="hero-banner-content">
+            <div class="hero-badge">
+              <i class="fa-solid fa-certificate"></i> ¡DIRECTO DE FÁBRICA Y ADUANA!
+            </div>
+            <h2 class="hero-title">Grandes Ofertas y Novedades en <span>Cobija</span></h2>
+            <p class="hero-description">
+              Encuentra los mejores juguetes, osos de peluche gigantes, teclados musicales, maquillajes de tendencia, material escolar y de oficina al mejor precio en <strong>Bolivianos (Bs)</strong>.
+            </p>
+            <div class="hero-highlights">
+              <div class="hero-feat"><i class="fa-solid fa-qrcode"></i> Pago con QR Simple</div>
+              <div class="hero-feat"><i class="fa-solid fa-box-open"></i> Venta por Mayor y Menor</div>
+              <div class="hero-feat"><i class="fa-solid fa-map-pin"></i> Diagonal a la Plaza Principal</div>
+            </div>
+            <div class="hero-cta-group">
+              <a href="#catalogoSection" class="btn btn-primary">
+                <i class="fa-solid fa-bag-shopping"></i> Explorar Catálogo
+              </a>
+              <button class="btn btn-secondary" onclick="filterByBadge('oferta')">
+                <i class="fa-solid fa-fire"></i> Ver Ofertas Especiales
+              </button>
+            </div>
+          </div>
+          <div class="hero-banner-media">
+            <div class="hero-img-showcase">
+              <img src="logo importaciones Anita.jpeg" alt="IMPORTACIONES ANITA" class="hero-floating-logo">
+              <div class="hero-floating-pill pill-1">
+                <i class="fa-solid fa-star text-gold"></i> Calidad Garantizada
+              </div>
+              <div class="hero-floating-pill pill-2">
+                <i class="fa-brands fa-whatsapp text-green"></i> Pedidos al 67664328
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPECIAL OFFERS TICKER / HIGHLIGHT CARDS -->
+        <div class="features-bar">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="feature-text">
+              <h4>Envíos en Cobija</h4>
+              <p>Entregas rápidas a domicilio y recojo en tienda</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-qrcode"></i></div>
+            <div class="feature-text">
+              <h4>Pagos con QR</h4>
+              <p>Banco Unión, BCP, BNB, Banco Sol, Tigo Money</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="feature-text">
+              <h4>Compra Segura</h4>
+              <p>Validación de pagos y comprobantes al instante</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="feature-text">
+              <h4>Atención Inmediata</h4>
+              <p>Soporte personalizado por WhatsApp 67664328</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= CATALOG SECTION ================= -->
+        <div class="catalogo-wrapper" id="catalogoSection">
+          
+          <!-- Filters & Sorting Bar -->
+          <div class="catalog-controls-card">
+            <div class="controls-top">
+              <div class="section-title-wrap">
+                <h3 class="section-heading" id="currentSectionTitle">
+                  <i class="fa-solid fa-boxes-stacked"></i> Catálogo de Productos
+                </h3>
+                <span class="results-count" id="resultsCount">Cargando productos...</span>
+              </div>
+              
+              <!-- Quick Filter Pills -->
+              <div class="badge-filter-pills">
+                <button class="pill-btn active" data-badge="todos" onclick="filterByBadge('todos')">Todos</button>
+                <button class="pill-btn" data-badge="oferta" onclick="filterByBadge('oferta')"><i class="fa-solid fa-percent"></i> Ofertas</button>
+                <button class="pill-btn" data-badge="novedad" onclick="filterByBadge('novedad')"><i class="fa-solid fa-sparkles"></i> Novedades</button>
+                <button class="pill-btn" data-badge="destacado" onclick="filterByBadge('destacado')"><i class="fa-solid fa-star"></i> Destacados</button>
+              </div>
+            </div>
+
+            <div class="controls-bottom">
+              <!-- Active Filters Tags -->
+              <div class="active-filters-chips" id="activeFiltersChips"></div>
+
+              <!-- Sorting Dropdown -->
+              <div class="sort-selector-wrapper">
+                <label for="sortSelect"><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar:</label>
+                <select id="sortSelect" onchange="handleSortChange(this.value)">
+                  <option value="default">Recomendados</option>
+                  <option value="price-asc">Precio: Menor a Mayor</option>
+                  <option value="price-desc">Precio: Mayor a Menor</option>
+                  <option value="name-asc">Nombre: A - Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="products-grid" id="productsGrid">
+            <!-- Product cards will be dynamically injected via app.js -->
+          </div>
+
+          <!-- Empty State -->
+          <div class="empty-state-card" id="emptyState" style="display: none;">
+            <div class="empty-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h3>No encontramos productos que coincidan</h3>
+            <p>Intenta cambiar las palabras clave de búsqueda o restablecer los filtros de categoría.</p>
+            <button class="btn btn-primary" onclick="resetAllFilters()">
+              <i class="fa-solid fa-rotate-left"></i> Restablecer Filtros
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= SIDEBAR PUBLICITARIO CON FLYERS ================= -->
+      <aside class="advertising-sidebar" id="advertisingSidebar">
+        
+        <!-- SIDEBAR FLYER CAROUSEL CARD -->
+        <div class="sidebar-widget flyer-carousel-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <span class="live-dot"></span>
+              <h4>Promociones y Novedades</h4>
+            </div>
+            <div class="carousel-nav-arrows">
+              <button class="carousel-arrow" id="prevFlyerBtn" title="Anterior flyer"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="carousel-arrow" id="nextFlyerBtn" title="Siguiente flyer"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Auto Slider Container -->
+          <div class="flyer-carousel-container" id="flyerCarousel">
+            <div class="flyer-slides-track" id="flyerSlidesTrack">
+              <!-- Flyer slides injected dynamically via app.js -->
+            </div>
+          </div>
+
+          <!-- Flyer Indicators -->
+          <div class="flyer-dots-container" id="flyerDots"></div>
+
+          <div class="flyer-subtext">
+            <small><i class="fa-solid fa-info-circle"></i> Los flyers cambian automáticamente cada 4 segundos</small>
+          </div>
+        </div>
+
+        <!-- SIDEBAR CATEGORIES SUMMARY WIDGET -->
+        <div class="sidebar-widget categories-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <i class="fa-solid fa-layer-group text-primary"></i>
+              <h4>Departamentos</h4>
+            </div>
+          </div>
+          <ul class="sidebar-categories-list" id="sidebarCategoriesList">
+            <!-- Populated via app.js -->
+          </ul>
+        </div>
+
+        <!-- SIDEBAR STORE CONTACT WIDGET -->
+        <div class="sidebar-widget store-info-widget">
+          <div class="info-widget-badge">
+            <img src="logo importaciones Anita.jpeg" alt="Logo Anita" class="widget-logo">
+            <div>
+              <h5>IMPORTACIONES ANITA</h5>
+              <span class="store-status"><i class="fa-solid fa-circle"></i> Abierto hoy</span>
+            </div>
+          </div>
+          <div class="store-info-details">
+            <div class="info-row">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <div>
+                <strong>Ubicación:</strong>
+                <p id="sidebarAddress">Diagonal a la plaza principal, Cobija, Pando, Bolivia.</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <i class="fa-brands fa-whatsapp text-green"></i>
+              <div>
+                <strong>WhatsApp Directo:</strong>
+                <p><a href="https://wa.me/59167664328" target="_blank" id="sidebarPhoneLink">67664328</a></p>
+              </div>
+            </div>
+            <div class="info-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Horario de Atención:</strong>
+                <p>Lunes a Sábado: 8:00 - 21:00<br>Domingos: 9:00 - 19:00</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/59167664328?text=Hola%20IMPORTACIONES%20ANITA,%20quisiera%20hacer%20un%20pedido%20directo" target="_blank" class="btn btn-whatsapp w-100">
+            <i class="fa-brands fa-whatsapp"></i> Chat Directo con la Tienda
+          </a>
+        </div>
+
+        <!-- SIDEBAR QR PAYMENT PREVIEW WIDGET -->
+        <div class="sidebar-widget qr-info-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <i class="fa-solid fa-qrcode text-primary"></i>
+              <h4>Paga Fácil con QR</h4>
+            </div>
+          </div>
+          <div class="qr-widget-body">
+            <div class="qr-mini-badge">
+              <i class="fa-solid fa-bolt"></i> SIMPLE QR BOLIVIA
+            </div>
+            <p>Aceptamos transferencias y pagos instantáneos con QR desde cualquier banco boliviano sin costo extra.</p>
+            <div class="bank-logos-row">
+              <span class="bank-pill">Banco Unión</span>
+              <span class="bank-pill">BNB</span>
+              <span class="bank-pill">BCP</span>
+              <span class="bank-pill">Banco Sol</span>
+              <span class="bank-pill">Tigo Money</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <aside class="floating-whatsapp-container" aria-label="Contacto por WhatsApp">
+    <a href="https://wa.me/59167664328?text=Hola%20IMPORTACIONES%20ANITA,%20estoy%20en%20la%20tienda%20online%20y%20tengo%20una%20consulta" target="_blank" class="floating-whatsapp-btn" id="floatingWhatsAppBtn" title="Consultar por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="wa-floating-tooltip">¿Dudas o pedidos? ¡Escríbenos al <strong>67664328</strong>!</span>
+      <span class="wa-ping-wave"></span>
+    </a>
+  </aside>
+
+  <!-- ================= SHOPPING CART DRAWER ================= -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Tu Carrito de Compras</h3>
+        <span class="cart-count-pill" id="cartDrawerCount">0 productos</span>
+      </div>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Cerrar Carrito">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress in Cobija -->
+    <div class="free-shipping-progress-box">
+      <div class="progress-message" id="shippingProgressText">
+        <i class="fa-solid fa-bicycle"></i> ¡Agrega <strong>Bs 120.00</strong> para envío GRATIS en Cobija!
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="shippingProgressBar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List -->
+    <div class="cart-drawer-body" id="cartItemsContainer">
+      <!-- Items dynamically populated via app.js -->
+    </div>
+
+    <!-- Cart Footer & Checkout Action -->
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="cart-summary-lines">
+        <div class="summary-line">
+          <span>Subtotal:</span>
+          <span class="summary-val" id="cartSubtotal">0.00 Bs</span>
+        </div>
+        <div class="summary-line">
+          <span>Envío local en Cobija:</span>
+          <span class="summary-val text-green" id="cartShipping">Gratis o a convenir</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Total a Pagar:</span>
+          <span class="summary-total" id="cartTotal">0.00 Bs</span>
+        </div>
+      </div>
+
+      <div class="cart-actions-group">
+        <button class="btn btn-primary btn-checkout w-100" id="proceedToCheckoutBtn">
+          <i class="fa-solid fa-qrcode"></i> Proceder al Pago con QR
+        </button>
+        <button class="btn btn-whatsapp w-100" id="orderViaWhatsAppDirectBtn">
+          <i class="fa-brands fa-whatsapp"></i> Pedir Directo por WhatsApp
+        </button>
+        <button class="btn btn-outline-danger btn-sm w-100" id="clearCartBtn">
+          <i class="fa-solid fa-trash-can"></i> Vaciar Carrito
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= PRODUCT QUICK VIEW MODAL ================= -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card quickview-modal-card">
+      <button class="modal-close-btn" onclick="closeQuickViewModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="quickview-body" id="quickViewContent">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CHECKOUT & QR PAYMENT MODAL ================= -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-card checkout-modal-card">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Checkout Multi-step Progress -->
+      <div class="checkout-stepper">
+        <div class="step-node active" id="stepNode1">
+          <span class="step-num">1</span>
+          <span class="step-name">Datos de Entrega</span>
+        </div>
+        <div class="step-line" id="stepLine1"></div>
+        <div class="step-node" id="stepNode2">
+          <span class="step-num">2</span>
+          <span class="step-name">Pago por QR</span>
+        </div>
+        <div class="step-line" id="stepLine2"></div>
+        <div class="step-node" id="stepNode3">
+          <span class="step-num">3</span>
+          <span class="step-name">Confirmación</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: CUSTOMER DETAILS -->
+      <div class="checkout-step-content" id="checkoutStep1">
+        <div class="checkout-header">
+          <h3><i class="fa-solid fa-id-card"></i> Datos para la Entrega</h3>
+          <p>Por favor completa tus datos para coordinar la entrega en Cobija o envío departamental.</p>
+        </div>
+
+        <form id="checkoutForm" onsubmit="handleProceedToPayment(event)">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="clientName"><i class="fa-solid fa-user"></i> Nombre Completo *</label>
+              <input type="text" id="clientName" required placeholder="Ej: Maria Lopez Flores">
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone"><i class="fa-brands fa-whatsapp"></i> Celular / WhatsApp *</label>
+              <input type="tel" id="clientPhone" required placeholder="Ej: 71234567 o 67664328">
+            </div>
+
+            <div class="form-group">
+              <label for="deliveryMethod"><i class="fa-solid fa-truck-ramp-box"></i> Modalidad de Entrega *</label>
+              <select id="deliveryMethod" required onchange="handleDeliveryMethodChange(this.value)">
+                <option value="domicilio">Entrega a domicilio en Cobija</option>
+                <option value="tienda">Recojo en Tienda (Diagonal Plaza Principal)</option>
+                <option value="provincia">Envío a Provincias de Pando</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="clientAddress"><i class="fa-solid fa-location-dot"></i> Dirección / Referencia en Cobija *</label>
+              <input type="text" id="clientAddress" required placeholder="Ej: Barrio Central, Calle Junín entre Beni y Santa Cruz">
+            </div>
+
+            <div class="form-group full-width">
+              <label for="orderNotes"><i class="fa-solid fa-pencil"></i> Notas o Indicaciones Especiales (Opcional)</label>
+              <textarea id="orderNotes" rows="2" placeholder="Ej: Envolver para regalo de cumpleaños, entregar por la tarde..."></textarea>
+            </div>
+          </div>
+
+          <!-- Checkout Order Mini Summary -->
+          <div class="checkout-mini-summary">
+            <div class="summary-row">
+              <span>Total de productos:</span>
+              <strong id="checkoutSummaryCount">0 items</strong>
+            </div>
+            <div class="summary-row highlight">
+              <span>Monto Total a Pagar:</span>
+              <strong id="checkoutSummaryTotal">0.00 Bs</strong>
+            </div>
+          </div>
+
+          <div class="form-actions-row">
+            <button type="button" class="btn btn-outline" onclick="closeCheckoutModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">
+              Continuar al Pago con QR <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2: QR PAYMENT & VALIDATION -->
+      <div class="checkout-step-content" id="checkoutStep2" style="display: none;">
+        <div class="checkout-header">
+          <h3><i class="fa-solid fa-qrcode text-primary"></i> Pago con QR Bancario Boliviano</h3>
+          <p>Realiza tu pago escaneando el código QR oficial de <strong>IMPORTACIONES ANITA</strong>.</p>
+        </div>
+
+        <div class="qr-payment-container">
+          <div class="qr-display-card">
+            <div class="qr-card-header">
+              <span class="qr-tag-bolivia"><i class="fa-solid fa-shield-check"></i> SIMPLE QR • BOLIVIA</span>
+              <span class="qr-amount-badge" id="qrAmountDisplay">0.00 Bs</span>
+            </div>
+            
+            <!-- Real or SVG Rendered QR -->
+            <div class="qr-image-frame" id="qrImageFrame">
+              <!-- Rendered via app.js -->
+            </div>
+
+            <div class="qr-instructions">
+              <p><strong>Pasos para pagar:</strong></p>
+              <ol>
+                <li>Abre la app de tu banco (Banco Unión, BNB, BCP, Banco Sol, FIE, etc.).</li>
+                <li>Selecciona la opción <strong>Pago con QR</strong> y escanea el código.</li>
+                <li>Verifica el monto total en Bolivianos y confirma la transferencia.</li>
+                <li>Toma una captura de pantalla del comprobante y súbela abajo para validar tu pedido.</li>
+              </ol>
+            </div>
+
+            <div class="store-bank-details" id="bankDetailsBox">
+              <div class="detail-row">
+                <span>Comercio:</span>
+                <strong>IMPORTACIONES ANITA</strong>
+              </div>
+              <div class="detail-row">
+                <span>Ciudad / Departamento:</span>
+                <strong>Cobija, Pando - Bolivia</strong>
+              </div>
+              <div class="detail-row">
+                <span>WhatsApp de Soporte:</span>
+                <strong id="qrSupportPhone">67664328</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAYMENT VALIDATION SECTION -->
+          <div class="payment-validation-card">
+            <h4><i class="fa-solid fa-clipboard-check text-green"></i> Validación de Pago</h4>
+            <p>Adjunta el comprobante emitido por tu banco para verificar la transacción de forma inmediata.</p>
+            
+            <div class="upload-dropzone" id="voucherDropzone" onclick="document.getElementById('voucherFileInput').click()">
+              <input type="file" id="voucherFileInput" accept="image/*,.pdf" style="display: none;" onchange="handleVoucherUpload(this)">
+              <div class="dropzone-content" id="dropzoneContent">
+                <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
+                <p><strong>Haz clic aquí para subir la foto del comprobante</strong></p>
+                <small>Formatos admitidos: JPG, PNG o PDF (Comprobante bancario)</small>
+              </div>
+              <div class="dropzone-preview" id="dropzonePreview" style="display: none;">
+                <img id="voucherPreviewImg" src="" alt="Comprobante de pago">
+                <span class="preview-filename" id="voucherFileName">comprobante.jpg</span>
+                <button type="button" class="btn-remove-voucher" onclick="removeVoucherFile(event)" title="Quitar archivo">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+              <label for="transactionIdInput"><i class="fa-solid fa-receipt"></i> N° de Operación / Referencia Bancaria (Opcional):</label>
+              <input type="text" id="transactionIdInput" placeholder="Ej: Op #849201 ó Cód. Transacción">
+            </div>
+
+            <div class="validation-status-alert" id="validationStatusAlert">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Sube tu comprobante para habilitar la confirmación y el despacho de tu pedido.</span>
+            </div>
+
+            <div class="form-actions-row">
+              <button type="button" class="btn btn-outline" onclick="goToCheckoutStep(1)">
+                <i class="fa-solid fa-arrow-left"></i> Modificar Datos
+              </button>
+              <button type="button" class="btn btn-success" id="validateAndConfirmBtn" onclick="handleValidateAndConfirmOrder()">
+                <i class="fa-solid fa-check-double"></i> Validar y Confirmar Compra
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: ORDER CONFIRMED & TICKET -->
+      <div class="checkout-step-content" id="checkoutStep3" style="display: none;">
+        <div class="order-success-screen">
+          <div class="success-icon-animation">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h2 class="success-title">¡Pedido Registrado con Éxito!</h2>
+          <p class="success-subtitle">
+            Gracias por comprar en <strong>IMPORTACIONES ANITA</strong>. Tu pedido ya está en nuestro sistema de atención.
+          </p>
+
+          <div class="order-ticket-card" id="orderTicketCard">
+            <!-- Ticket content injected via app.js -->
+          </div>
+
+          <div class="success-actions-group">
+            <a id="sendOrderWhatsAppBtn" href="#" target="_blank" class="btn btn-whatsapp btn-lg w-100">
+              <i class="fa-brands fa-whatsapp"></i> Enviar Pedido y Comprobante al WhatsApp (67664328)
+            </a>
+            <div class="secondary-actions">
+              <button class="btn btn-outline" onclick="printOrderTicket()">
+                <i class="fa-solid fa-print"></i> Imprimir Recibo
+              </button>
+              <button class="btn btn-secondary" onclick="closeCheckoutModal(); resetAllFilters();">
+                <i class="fa-solid fa-bag-shopping"></i> Seguir Comprando
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= ADMIN LOGIN MODAL ================= -->
+  <div class="modal-overlay" id="adminLoginModal">
+    <div class="modal-card admin-login-card">
+      <button class="modal-close-btn" onclick="closeAdminLoginModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="admin-login-header">
+        <div class="admin-shield-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>Panel Administrativo</h3>
+        <p><strong>IMPORTACIONES ANITA</strong> • Acceso Restringido</p>
+      </div>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div class="form-group">
+          <label for="adminUsername"><i class="fa-solid fa-user"></i> Usuario</label>
+          <input type="text" id="adminUsername" required placeholder="Usuario administrador">
+        </div>
+
+        <div class="form-group">
+          <label for="adminPassword"><i class="fa-solid fa-lock"></i> Contraseña</label>
+          <div class="password-input-group">
+            <input type="password" id="adminPassword" required placeholder="Contraseña">
+            <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('adminPassword', this)">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-login-hint">
+          <small><i class="fa-solid fa-key"></i> Acceso por defecto: Usuario: <strong>admin</strong> | Clave: <strong>anita123</strong></small>
+        </div>
+
+        <div class="login-error-msg" id="loginErrorMsg" style="display: none;">
+          <i class="fa-solid fa-triangle-exclamation"></i> Usuario o contraseña incorrectos.
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 btn-lg">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Ingresar al Panel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= FULL ADMIN DASHBOARD MODAL ================= -->
+  <div class="admin-panel-fullscreen" id="adminDashboardModal" style="display: none;">
+    
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <img src="logo importaciones Anita.jpeg" alt="Logo Anita" class="admin-brand-logo">
+        <div>
+          <h4>IMPORTACIONES ANITA</h4>
+          <span>Panel de Control</span>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <button class="admin-nav-item active" data-tab="tab-resumen" onclick="switchAdminTab('tab-resumen')">
+          <i class="fa-solid fa-chart-pie"></i> Resumen General
+        </button>
+        <button class="admin-nav-item" data-tab="tab-productos" onclick="switchAdminTab('tab-productos')">
+          <i class="fa-solid fa-boxes-stacked"></i> Productos & Precios
+        </button>
+        <button class="admin-nav-item" data-tab="tab-categorias" onclick="switchAdminTab('tab-categorias')">
+          <i class="fa-solid fa-layer-group"></i> Categorías
+        </button>
+        <button class="admin-nav-item" data-tab="tab-flyers" onclick="switchAdminTab('tab-flyers')">
+          <i class="fa-solid fa-images"></i> Flyers Publicitarios
+        </button>
+        <button class="admin-nav-item" data-tab="tab-pedidos" onclick="switchAdminTab('tab-pedidos')">
+          <i class="fa-solid fa-clipboard-list"></i> Pedidos y QR <span class="admin-orders-badge" id="adminPendingOrdersBadge">0</span>
+        </button>
+        <button class="admin-nav-item" data-tab="tab-ajustes" onclick="switchAdminTab('tab-ajustes')">
+          <i class="fa-solid fa-store"></i> Datos Comerciales
+        </button>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <button class="btn btn-outline-danger w-100" onclick="handleAdminLogout()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión
+        </button>
+        <button class="btn btn-secondary w-100 mt-2" onclick="closeAdminDashboard()">
+          <i class="fa-solid fa-shop"></i> Ir a la Tienda
+        </button>
+      </div>
+    </aside>
+
+    <!-- Admin Main Body -->
+    <main class="admin-main-view">
+      
+      <!-- Admin Top Navbar -->
+      <header class="admin-topbar">
+        <div class="admin-topbar-title">
+          <h2 id="adminCurrentTabTitle">Resumen General</h2>
+          <span class="admin-welcome-text">Administración Integral sin editar código</span>
+        </div>
+        <div class="admin-topbar-actions">
+          <button class="btn btn-outline" onclick="exportStoreData()">
+            <i class="fa-solid fa-download"></i> Respaldar Datos
+          </button>
+          <button class="btn btn-outline" onclick="document.getElementById('importDataInput').click()">
+            <i class="fa-solid fa-upload"></i> Restaurar
+          </button>
+          <input type="file" id="importDataInput" accept=".json" style="display: none;" onchange="importStoreData(this)">
+          <button class="btn btn-danger-soft" onclick="resetToDefaultData()">
+            <i class="fa-solid fa-rotate-left"></i> Restablecer Catálogo Original
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: RESUMEN GENERAL -->
+      <section class="admin-tab-section active" id="tab-resumen">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon bg-blue"><i class="fa-solid fa-box-open"></i></div>
+            <div class="metric-details">
+              <span class="metric-label">Total Productos</span>
+              <h3 class="metric-value" id="metricTotalProducts">0</h3>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon bg-green"><i class="fa-solid fa-receipt"></i></div>
+            <div class="metric-details">
+              <span class="metric-label">Pedidos Recibidos</span>
+              <h3 class="metric-value" id="metricTotalOrders">0</h3>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon bg-amber"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <div class="metric-details">
+              <span class="metric-label">Ventas Estimadas</span>
+              <h3 class="metric-value" id="metricTotalSales">0.00 Bs</h3>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon bg-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="metric-details">
+              <span class="metric-label">Stock Bajo</span>
+              <h3 class="metric-value" id="metricLowStock">0</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-dashboard-two-cols">
+          <!-- Recent Orders Card -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3><i class="fa-solid fa-clock-rotate-left"></i> Últimos Pedidos Recibidos</h3>
+              <button class="btn btn-sm btn-outline" onclick="switchAdminTab('tab-pedidos')">Ver Todos</button>
+            </div>
+            <div class="admin-table-container">
+              <table class="admin-table" id="dashboardRecentOrdersTable">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Injected via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Quick Store Info & Status -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3><i class="fa-solid fa-circle-info"></i> Estado del Negocio</h3>
+            </div>
+            <div class="store-quick-status-body">
+              <div class="status-row">
+                <span>Razón Social:</span>
+                <strong>IMPORTACIONES ANITA</strong>
+              </div>
+              <div class="status-row">
+                <span>Dirección Comercial:</span>
+                <span id="dashAddress">Diagonal a la plaza principal, Cobija, Pando</span>
+              </div>
+              <div class="status-row">
+                <span>WhatsApp de Contacto:</span>
+                <strong id="dashPhone">67664328</strong>
+              </div>
+              <div class="status-row">
+                <span>Moneda Oficial:</span>
+                <strong>Bolivianos (Bs)</strong>
+              </div>
+              <div class="status-row">
+                <span>Validación de Pagos QR:</span>
+                <strong class="text-green"><i class="fa-solid fa-check"></i> Activa con Comprobantes</strong>
+              </div>
+              <div class="status-row">
+                <span>Publicidad Lateral (Flyers):</span>
+                <strong class="text-green"><i class="fa-solid fa-check"></i> Carrusel Activo</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: GESTIÓN DE PRODUCTOS -->
+      <section class="admin-tab-section" id="tab-productos">
+        <div class="admin-card">
+          <div class="admin-card-header between-wrap">
+            <div class="header-left">
+              <h3><i class="fa-solid fa-boxes-stacked"></i> Inventario de Productos</h3>
+              <p>Crea, edita fotografías, precios, existencias y ofertas sin tocar código.</p>
+            </div>
+            <div class="header-right">
+              <button class="btn btn-primary" onclick="openProductFormModal()">
+                <i class="fa-solid fa-plus"></i> Nuevo Producto
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Filters -->
+          <div class="table-search-bar">
+            <div class="search-input-group">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="adminProductSearch" placeholder="Buscar por nombre o descripción..." oninput="filterAdminProducts()">
+            </div>
+            <select id="adminCategoryFilter" onchange="filterAdminProducts()">
+              <option value="all">Todas las categorías</option>
+            </select>
+          </div>
+
+          <!-- Products Table -->
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nombre del Producto</th>
+                  <th>Categoría</th>
+                  <th>Precio (Bs)</th>
+                  <th>Stock</th>
+                  <th>Etiquetas</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- Injected via admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: GESTIÓN DE CATEGORÍAS -->
+      <section class="admin-tab-section" id="tab-categorias">
+        <div class="admin-card">
+          <div class="admin-card-header between-wrap">
+            <div>
+              <h3><i class="fa-solid fa-layer-group"></i> Categorías de la Tienda</h3>
+              <p>Organiza los departamentos comerciales y secciones del catálogo.</p>
+            </div>
+            <div>
+              <button class="btn btn-primary" onclick="openCategoryFormModal()">
+                <i class="fa-solid fa-plus"></i> Nueva Categoría
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Icono</th>
+                  <th>Nombre de Categoría</th>
+                  <th>Identificador (Slug)</th>
+                  <th>Productos</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="adminCategoriesTableBody">
+                <!-- Injected via admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: GESTIÓN DE FLYERS PUBLICITARIOS -->
+      <section class="admin-tab-section" id="tab-flyers">
+        <div class="admin-card">
+          <div class="admin-card-header between-wrap">
+            <div>
+              <h3><i class="fa-solid fa-images"></i> Flyers del Sidebar Publicitario</h3>
+              <p>Agrega o modifica los banners y volantes publicitarios que rotan automáticamente en la barra lateral.</p>
+            </div>
+            <div>
+              <button class="btn btn-primary" onclick="openFlyerFormModal()">
+                <i class="fa-solid fa-plus"></i> Nuevo Flyer
+              </button>
+            </div>
+          </div>
+
+          <div class="flyers-admin-grid" id="adminFlyersGrid">
+            <!-- Injected via admin.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: GESTIÓN DE PEDIDOS Y QR -->
+      <section class="admin-tab-section" id="tab-pedidos">
+        <div class="admin-card">
+          <div class="admin-card-header between-wrap">
+            <div>
+              <h3><i class="fa-solid fa-clipboard-list"></i> Pedidos y Validación de Pagos QR</h3>
+              <p>Revisa los pedidos de clientes, comprueba sus recibos bancarios y actualiza el estado de entrega.</p>
+            </div>
+            <div class="filter-buttons-group">
+              <button class="btn btn-sm btn-outline active" onclick="filterAdminOrders('all', this)">Todos</button>
+              <button class="btn btn-sm btn-outline" onclick="filterAdminOrders('pendiente', this)">Pendientes</button>
+              <button class="btn btn-sm btn-outline" onclick="filterAdminOrders('verificado', this)">Verificados</button>
+              <button class="btn btn-sm btn-outline" onclick="filterAdminOrders('entregado', this)">Entregados</button>
+            </div>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Fecha</th>
+                  <th>Cliente</th>
+                  <th>Teléfono / WhatsApp</th>
+                  <th>Total</th>
+                  <th>Comprobante QR</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody">
+                <!-- Injected via admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: DATOS COMERCIALES & CONFIGURACIÓN -->
+      <section class="admin-tab-section" id="tab-ajustes">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3><i class="fa-solid fa-store"></i> Configuración Comercial de la Tienda</h3>
+            <p>Modifica la información visible de IMPORTACIONES ANITA sin tocar código fuente.</p>
+          </div>
+
+          <form id="commercialSettingsForm" onsubmit="handleSaveCommercialSettings(event)">
+            <div class="form-grid">
+              
+              <div class="form-group full-width">
+                <label for="settingStoreName"><i class="fa-solid fa-tag"></i> Nombre Comercial de la Tienda *</label>
+                <input type="text" id="settingStoreName" required value="IMPORTACIONES ANITA">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="settingAddress"><i class="fa-solid fa-location-dot"></i> Dirección Física de la Tienda *</label>
+                <input type="text" id="settingAddress" required value="Diagonal a la plaza principal, Cobija, Pando, Bolivia.">
+              </div>
+
+              <div class="form-group">
+                <label for="settingPhone"><i class="fa-brands fa-whatsapp"></i> WhatsApp para Pedidos y Consultas *</label>
+                <input type="text" id="settingPhone" required value="67664328">
+              </div>
+
+              <div class="form-group">
+                <label for="settingCurrency"><i class="fa-solid fa-coins"></i> Moneda Oficial *</label>
+                <input type="text" id="settingCurrency" required value="Bolivianos (Bs)">
+              </div>
+
+              <div class="form-group">
+                <label for="settingFreeShippingThreshold"><i class="fa-solid fa-truck-fast"></i> Monto Mínimo Envío Gratis (Bs)</label>
+                <input type="number" id="settingFreeShippingThreshold" value="120" min="0">
+              </div>
+
+              <div class="form-group">
+                <label for="settingAdminPassword"><i class="fa-solid fa-key"></i> Cambiar Contraseña del Administrador</label>
+                <input type="password" id="settingAdminPassword" placeholder="Dejar en blanco para conservar actual">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="settingQrImage"><i class="fa-solid fa-qrcode"></i> Imagen del Código QR de Cobro (URL o subir archivo)</label>
+                <div class="file-upload-row">
+                  <input type="text" id="settingQrImage" placeholder="Ruta de imagen o deja la predeterminada">
+                  <label class="btn btn-outline file-btn-label">
+                    <i class="fa-solid fa-upload"></i> Subir Foto QR
+                    <input type="file" id="settingQrFileInput" accept="image/*" style="display: none;" onchange="handleQrImageUpload(this)">
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="settingBankInfo"><i class="fa-solid fa-building-columns"></i> Datos de Cuentas Bancarias / Titular QR</label>
+                <textarea id="settingBankInfo" rows="3">Titular: IMPORTACIONES ANITA
+Bancos Aceptados: Banco Unión, BNB, BCP, Banco Sol, FIE, Fassil/Tigo Money
+Cobija - Pando, Bolivia</textarea>
+              </div>
+
+            </div>
+
+            <div class="form-actions-row">
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-floppy-disk"></i> Guardar Cambios Comerciales
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= PRODUCT FORM MODAL (ADMIN) ================= -->
+  <div class="modal-overlay" id="productFormModal">
+    <div class="modal-card admin-form-modal">
+      <button class="modal-close-btn" onclick="closeProductFormModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <h3 id="productFormModalTitle"><i class="fa-solid fa-box-open"></i> Nuevo Producto</h3>
+      </div>
+
+      <form id="productEditForm" onsubmit="handleSaveProduct(event)">
+        <input type="hidden" id="prodEditId">
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="prodEditName">Nombre del Producto *</label>
+            <input type="text" id="prodEditName" required placeholder="Ej: Peluche Gigante Stitch con Manta">
+          </div>
+
+          <div class="form-group">
+            <label for="prodEditCategory">Categoría *</label>
+            <select id="prodEditCategory" required></select>
+          </div>
+
+          <div class="form-group">
+            <label for="prodEditPrice">Precio Actual (Bs) *</label>
+            <input type="number" id="prodEditPrice" required min="1" step="0.5" placeholder="Ej: 95">
+          </div>
+
+          <div class="form-group">
+            <label for="prodEditOldPrice">Precio Anterior / Oferta (Bs)</label>
+            <input type="number" id="prodEditOldPrice" min="0" step="0.5" placeholder="Ej: 120 (opcional)">
+          </div>
+
+          <div class="form-group">
+            <label for="prodEditStock">Existencias / Stock *</label>
+            <input type="number" id="prodEditStock" required min="0" placeholder="Ej: 15">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="prodEditImage">Fotografía del Producto *</label>
+            <div class="file-upload-row">
+              <input type="text" id="prodEditImage" required placeholder="Nombre de archivo (ej: OSOSO.jpeg) o URL">
+              <label class="btn btn-outline file-btn-label">
+                <i class="fa-solid fa-image"></i> Subir Foto
+                <input type="file" id="prodEditFileInput" accept="image/*" style="display: none;" onchange="handleProductImageFile(this)">
+              </label>
+            </div>
+            <div class="image-preview-box" id="prodEditPreviewBox" style="display: none;">
+              <img id="prodEditPreviewImg" src="" alt="Vista previa">
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="prodEditDescription">Descripción Detallada *</label>
+            <textarea id="prodEditDescription" rows="3" required placeholder="Características, medidas, detalles y recomendaciones..."></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Etiquetas Especiales:</label>
+            <div class="checkboxes-row">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="prodEditBadgeOferta">
+                <span>🔥 En Oferta</span>
+              </label>
+              <label class="custom-checkbox">
+                <input type="checkbox" id="prodEditBadgeNovedad">
+                <span>✨ Novedad</span>
+              </label>
+              <label class="custom-checkbox">
+                <input type="checkbox" id="prodEditBadgeDestacado">
+                <span>⭐ Destacado</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions-row">
+          <button type="button" class="btn btn-outline" onclick="closeProductFormModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i> Guardar Producto
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= CATEGORY FORM MODAL (ADMIN) ================= -->
+  <div class="modal-overlay" id="categoryFormModal">
+    <div class="modal-card admin-form-modal">
+      <button class="modal-close-btn" onclick="closeCategoryFormModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <h3 id="categoryFormModalTitle"><i class="fa-solid fa-layer-group"></i> Nueva Categoría</h3>
+      </div>
+
+      <form id="categoryEditForm" onsubmit="handleSaveCategory(event)">
+        <input type="hidden" id="catEditId">
+
+        <div class="form-group">
+          <label for="catEditName">Nombre de la Categoría *</label>
+          <input type="text" id="catEditName" required placeholder="Ej: Pianos y Teclados">
+        </div>
+
+        <div class="form-group">
+          <label for="catEditIcon">Icono (Clase FontAwesome) *</label>
+          <input type="text" id="catEditIcon" required placeholder="Ej: fa-solid fa-music">
+          <small>Ejemplos: fa-solid fa-gamepad, fa-solid fa-gift, fa-solid fa-paintbrush</small>
+        </div>
+
+        <div class="form-actions-row">
+          <button type="button" class="btn btn-outline" onclick="closeCategoryFormModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i> Guardar Categoría
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= FLYER FORM MODAL (ADMIN) ================= -->
+  <div class="modal-overlay" id="flyerFormModal">
+    <div class="modal-card admin-form-modal">
+      <button class="modal-close-btn" onclick="closeFlyerFormModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <h3 id="flyerFormModalTitle"><i class="fa-solid fa-image"></i> Nuevo Flyer Publicitario</h3>
+      </div>
+
+      <form id="flyerEditForm" onsubmit="handleSaveFlyer(event)">
+        <input type="hidden" id="flyerEditId">
+
+        <div class="form-group">
+          <label for="flyerEditTitle">Título del Flyer *</label>
+          <input type="text" id="flyerEditTitle" required placeholder="Ej: ¡Gran Liquidación de Juguetes!">
+        </div>
+
+        <div class="form-group">
+          <label for="flyerEditSubtitle">Subtítulo o Promoción *</label>
+          <input type="text" id="flyerEditSubtitle" required placeholder="Ej: Hasta 30% de descuento en artículos seleccionados">
+        </div>
+
+        <div class="form-group">
+          <label for="flyerEditTag">Etiqueta Destacada *</label>
+          <input type="text" id="flyerEditTag" required placeholder="Ej: OFERTA ESPECIAL o NUEVA COLECCIÓN">
+        </div>
+
+        <div class="form-group">
+          <label for="flyerEditImage">Imagen del Flyer *</label>
+          <div class="file-upload-row">
+            <input type="text" id="flyerEditImage" required placeholder="Ruta de imagen o nombre de archivo">
+            <label class="btn btn-outline file-btn-label">
+              <i class="fa-solid fa-image"></i> Subir Foto
+              <input type="file" id="flyerEditFileInput" accept="image/*" style="display: none;" onchange="handleFlyerImageFile(this)">
+            </label>
+          </div>
+          <div class="image-preview-box" id="flyerEditPreviewBox" style="display: none;">
+            <img id="flyerEditPreviewImg" src="" alt="Vista previa de flyer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="flyerEditCategory">Categoría Vinculada (Opcional):</label>
+          <select id="flyerEditCategory">
+            <option value="">Todas las categorías</option>
+          </select>
+        </div>
+
+        <div class="form-actions-row">
+          <button type="button" class="btn btn-outline" onclick="closeFlyerFormModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i> Guardar Flyer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= VIEW VOUCHER MODAL (ADMIN) ================= -->
+  <div class="modal-overlay" id="viewVoucherModal">
+    <div class="modal-card voucher-modal-card">
+      <button class="modal-close-btn" onclick="closeVoucherModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="voucher-modal-header">
+        <h3><i class="fa-solid fa-receipt text-primary"></i> Comprobante de Pago Bancario</h3>
+        <p id="voucherModalOrderInfo">Pedido: #ANITA-0000</p>
+      </div>
+      <div class="voucher-modal-body" id="voucherModalBody">
+        <!-- Image or content injected via admin.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MANDATORY FOOTER ================= -->
+  <footer class="mandatory-footer">
+    <div class="footer-top-decoration"></div>
+    <div class="container footer-content-container">
+      
+      <!-- Brand & Mission Column -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand-header">
+          <img src="logo importaciones Anita.jpeg" alt="Logo IMPORTACIONES ANITA" class="footer-brand-logo">
+          <div>
+            <h3 class="footer-brand-name">IMPORTACIONES ANITA</h3>
+            <span class="footer-brand-sub">Cobija - Pando • Bolivia</span>
+          </div>
+        </div>
+        <p class="footer-mission-text">
+          Tu tienda virtual de confianza especializada en juguetes, peluches gigantes, maquillajes de tendencia, pianos y teclados musicales, material escolar y de oficina, mochilas, ropa infantil y regalos exclusivos.
+        </p>
+        <div class="footer-payment-badges">
+          <span class="pay-badge"><i class="fa-solid fa-qrcode"></i> Simple QR</span>
+          <span class="pay-badge"><i class="fa-solid fa-building-columns"></i> Transferencias</span>
+          <span class="pay-badge"><i class="fa-solid fa-money-bill-wave"></i> Efectivo en Tienda</span>
+        </div>
+      </div>
+
+      <!-- Quick Categories Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Departamentos</h4>
+        <ul class="footer-links-list" id="footerCategoriesList">
+          <li><a href="javascript:void(0)" onclick="filterByCategory('juguetes')">Juguetes y Juegos</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('peluches')">Peluches y Osos</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('maquillaje')">Maquillajes y Belleza</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('pianos')">Pianos y Teclados</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('escolar')">Material Escolar y Oficina</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('mochilas')">Mochilas Escolares</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('ropa-infantil')">Ropa Infantil</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('sublimacion')">Sublimación y Regalos</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Care & Security Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Atención al Cliente</h4>
+        <ul class="footer-links-list">
+          <li><a href="javascript:void(0)" onclick="filterByBadge('oferta')"><i class="fa-solid fa-fire text-amber"></i> Ofertas Especiales</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByBadge('novedad')"><i class="fa-solid fa-sparkles text-amber"></i> Novedades Importadas</a></li>
+          <li><a href="#catalogoSection"><i class="fa-solid fa-shield-check"></i> Garantía y Calidad</a></li>
+          <li><a href="https://wa.me/59167664328" target="_blank"><i class="fa-brands fa-whatsapp text-green"></i> Soporte 24/7 WhatsApp</a></li>
+          <li><a href="javascript:void(0)" onclick="openAdminLoginModal()"><i class="fa-solid fa-lock text-primary"></i> Acceso Administrativo</a></li>
+        </ul>
+      </div>
+
+      <!-- Mandatory Contact Column -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-col-title">Contacto y Ubicación</h4>
+        
+        <div class="mandatory-contact-card">
+          <p class="company-name-bold">IMPORTACIONES ANITA</p>
+          <p class="company-address-bold">Diagonal a la plaza principal, Cobija, Pando, Bolivia.</p>
+          <p class="company-phone-bold">
+            WhatsApp: <a href="https://wa.me/59167664328" target="_blank">67664328</a>.
+          </p>
+        </div>
+
+        <div class="footer-direct-wa-box">
+          <a href="https://wa.me/59167664328?text=Hola%20IMPORTACIONES%20ANITA,%20deseo%20hacer%20un%20pedido" target="_blank" class="btn btn-whatsapp w-100">
+            <i class="fa-brands fa-whatsapp"></i> Chatear con Ventas
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MANDATORY LAST LINE -->
+    <div class="mandatory-bottom-bar">
+      <div class="container bottom-bar-container">
+        <div class="mandatory-copy-text">
+          &copy; 2026 <strong>IMPORTACIONES ANITA</strong>. Todos los derechos reservados. Cobija, Pando, Bolivia.
+        </div>
+        <div class="mandatory-developer-credit">
+          <strong>Desarrollado por: Proari Systems</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
